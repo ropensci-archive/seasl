@@ -3,13 +3,6 @@ csl
 
 ```{r echo=FALSE}
 library("knitr")
-knitr::opts_chunk$set(
-  comment = "#>",
-  collapse = TRUE,
-  warning = FALSE, 
-  message = FALSE
-)
-
 hook_output <- knitr::knit_hooks$get("output")
 knitr::knit_hooks$set(output = function(x, options) {
    lines <- options$output.lines
@@ -33,6 +26,13 @@ knitr::knit_hooks$set(output = function(x, options) {
    x <- paste(c(x, ""), collapse = "\n")
    hook_output(x, options)
  })
+
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  warning = FALSE, 
+  message = FALSE
+)
 ```
 
 `csl` is an R client for exploring CSL styles. 
@@ -59,7 +59,7 @@ jps <- style_load('http://zotero.org/styles/american-journal-of-political-scienc
 
 ## Query style information
 
-```{r}
+```{r output.lines = 1:10}
 jps$info
 ```
 
@@ -75,11 +75,11 @@ jps$citation_format
 jps$links_template
 ```
 
-```{r}
+```{r output.lines = 1:10}
 jps$editor
 ```
 
-```{r}
+```{r output.lines = 1:10}
 jps$author
 ```
 
