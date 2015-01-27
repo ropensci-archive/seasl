@@ -1,0 +1,24 @@
+csl
+=======
+
+`csl` is an R client for exploring CSL styles. 
+
+* The [Citation Style Language 1.0.1 specification](http://citationstyles.org/downloads/specification.html)
+* asdfadf
+
+## Install
+
+```{r eval=FALSE}
+install.packages("devtools")
+devtools::install_github("sckott/csl")
+```
+
+```{r}
+library("csl")
+```
+
+## Do things...
+
+```{r}
+print("hello world")
+```
