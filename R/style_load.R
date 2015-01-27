@@ -4,9 +4,13 @@
 #' @import XML httr
 #'
 #' @param input URL or local file path
+#' @param ... Curl options passed on to \code{\link[httr]{GET}}.
+#' @details This function fetches the style XML document, and parses it into
+#' a more reasonble R list that's easy to navigate. If you want the raw XML,
+#' see \code{\link{style_xml}}.
 #' @examples \dontrun{
 #' # Load a style from the Zotero style repository
-#' jps <- load_style(input = 'http://zotero.org/styles/american-journal-of-political-science')
+#' jps <- style_load(input = 'http://zotero.org/styles/american-journal-of-political-science')
 #' ## Query style information
 #' jps$info
 #' jps$title
@@ -16,8 +20,8 @@
 #' jps$author
 #' }
 
-load_style <- function(input){
-  out <- csl_GET(input)
+style_load <- function(input, ...){
+  out <- csl_GET(input, ...)
   xml <- XML::xmlParse(out)
   parse_xml(xml)
 }
@@ -43,12 +47,6 @@ get_name <- function(x){
     xmlAttrs(x)[[1]]
   else
     tmp
-}
-
-csl_GET <- function(x, ...){
-  out <- httr::GET(x, ...)
-  httr::stop_for_status(out)
-  content(out, "text")
 }
 
 parse_links <- function(z){

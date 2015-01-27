@@ -29,7 +29,7 @@ library("csl")
 ## Load CSL style from a URL
 
 ```{r}
-jps <- load_style(input = 'http://zotero.org/styles/american-journal-of-political-science')
+jps <- style_load('http://zotero.org/styles/american-journal-of-political-science')
 ```
 
 ## Query style information
