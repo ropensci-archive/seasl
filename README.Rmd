@@ -2,12 +2,37 @@ csl
 =======
 
 ```{r echo=FALSE}
+library("knitr")
 knitr::opts_chunk$set(
   comment = "#>",
   collapse = TRUE,
   warning = FALSE, 
   message = FALSE
 )
+
+hook_output <- knitr::knit_hooks$get("output")
+knitr::knit_hooks$set(output = function(x, options) {
+   lines <- options$output.lines
+   if (is.null(lines)) {
+     return(hook_output(x, options))  # pass to default hook
+   }
+   x <- unlist(strsplit(x, "\n"))
+   more <- "..."
+   if (length(lines)==1) {        # first n lines
+     if (length(x) > lines) {
+       # truncate the output, but add ....
+       x <- c(head(x, lines), more)
+     }
+   } else {
+     x <- c(if (abs(lines[1])>1) more else NULL, 
+            x[lines], 
+            if (length(x)>lines[abs(length(lines))]) more else NULL
+           )
+   }
+   # paste these lines together
+   x <- paste(c(x, ""), collapse = "\n")
+   hook_output(x, options)
+ })
 ```
 
 `csl` is an R client for exploring CSL styles. 
@@ -56,4 +81,11 @@ jps$editor
 
 ```{r}
 jps$author
+```
+
+
+## Get raw XML
+
+```{r output.lines=1:10}
+style_xml('http://zotero.org/styles/american-journal-of-political-science')
 ```

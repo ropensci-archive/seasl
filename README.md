@@ -25,7 +25,7 @@ library("csl")
 
 
 ```r
-jps <- load_style(input = 'http://zotero.org/styles/american-journal-of-political-science')
+jps <- style_load('http://zotero.org/styles/american-journal-of-political-science')
 ```
 
 ## Query style information
@@ -174,4 +174,23 @@ jps$author
 #> 
 #> $substitute$macro
 #> [1] "title"
+```
+
+
+## Get raw XML
+
+
+```r
+style_xml('http://zotero.org/styles/american-journal-of-political-science')
+#> <?xml version="1.0" encoding="utf-8"?>
+#> <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-US">
+#>   <info>
+#>     <title>American Journal of Political Science</title>
+#>     <title-short>AJPS</title-short>
+#>     <id>http://www.zotero.org/styles/american-journal-of-political-science</id>
+#>     <link href="http://www.zotero.org/styles/american-journal-of-political-science" rel="self"/>
+#>     <link href="http://www.zotero.org/styles/american-political-science-association" rel="template"/>
+#>     <link href="http://www.ajps.org/AJPS%20Style%20Guide.pdf" rel="documentation"/>
+#>     <author>
+...
 ```
