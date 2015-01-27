@@ -9,6 +9,9 @@ style_xml(input, raw = FALSE, ...)
 \arguments{
 \item{input}{URL or local file path}
 
+\item{raw}{(logical) If \code{FALSE} (default) return parsed XML to class
+\code{XMLInternalDocument}. If \code{TRUE}, get character string of XML.}
+
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}.}
 }
 \description{

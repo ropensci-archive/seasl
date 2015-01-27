@@ -3,6 +3,8 @@
 #' @export
 #'
 #' @param input URL or local file path
+#' @param raw (logical) If \code{FALSE} (default) return parsed XML to class
+#' \code{XMLInternalDocument}. If \code{TRUE}, get character string of XML.
 #' @param ... Curl options passed on to \code{\link[httr]{GET}}.
 #' @details This function fetches the style XML document. If you want parsed data,
 #' see \code{\link{style_load}}.
