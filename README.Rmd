@@ -1,6 +1,15 @@
 csl
 =======
 
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  warning = FALSE, 
+  message = FALSE
+)
+```
+
 `csl` is an R client for exploring CSL styles. 
 
 * The [Citation Style Language 1.0.1 specification](http://citationstyles.org/downloads/specification.html)
@@ -17,8 +26,34 @@ devtools::install_github("sckott/csl")
 library("csl")
 ```
 
-## Do things...
+## Load CSL style from a URL
 
 ```{r}
-print("hello world")
+jps <- load_style(input = 'http://zotero.org/styles/american-journal-of-political-science')
+```
+
+## Query style information
+
+```{r}
+jps$info
+```
+
+```{r}
+jps$title
+```
+
+```{r}
+jps$citation_format
+```
+
+```{r}
+jps$links_template
+```
+
+```{r}
+jps$editor
+```
+
+```{r}
+jps$author
 ```
