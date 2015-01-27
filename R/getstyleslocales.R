@@ -16,6 +16,7 @@
 
 get_styles <- function(path = NULL, ...){
   if(is.null(path)) path <- Sys.getenv("HOME")
+  unlink(file.path(path, "styles"), recursive = TRUE, force = TRUE)
   httr::GET(styles_zip_url(), write_disk(file.path(path, "styles.zip"), overwrite = TRUE), ...)
   unzip(file.path(path, "styles.zip"), exdir = path)
   file.rename(file.path(path, "styles-distribution-master"), file.path(path, "styles"))
@@ -28,6 +29,7 @@ get_styles <- function(path = NULL, ...){
 #' @rdname get_styles
 get_locales <- function(path = NULL, ...){
   if(is.null(path)) path <- Sys.getenv("HOME")
+  unlink(file.path(path, "locales"), recursive = TRUE, force = TRUE)
   httr::GET(locales_zip_url(), write_disk(file.path(path, "locales.zip"), overwrite = TRUE), ...)
   unzip(file.path(path, "locales.zip"), exdir = path)
   file.rename(file.path(path, "locales-master"), file.path(path, "locales"))

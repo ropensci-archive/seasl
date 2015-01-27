@@ -6,7 +6,6 @@ csl
 `csl` is an R client for exploring CSL styles. 
 
 * The [Citation Style Language 1.0.1 specification](http://citationstyles.org/downloads/specification.html)
-* asdfadf
 
 ## Install
 
@@ -96,7 +95,6 @@ jps$author
 ...
 ```
 
-
 ## Get raw XML
 
 
@@ -113,4 +111,26 @@ style_xml('http://zotero.org/styles/american-journal-of-political-science')
 #>     <link href="http://www.ajps.org/AJPS%20Style%20Guide.pdf" rel="documentation"/>
 #>     <author>
 ...
+```
+
+## Get styles
+
+Get styles from the Github repo at [https://github.com/citation-style-language/styles-distribution](https://github.com/citation-style-language/styles-distribution)
+
+
+```r
+get_styles()
+#> 
+#> Done! Files put in /Users/sacmac/styles
+```
+
+## Get locales
+
+Get locales from the Github repo at [https://github.com/citation-style-language/locales](https://github.com/citation-style-language/locales)
+
+
+```r
+get_locales()
+#> 
+#> Done! Files put in /Users/sacmac/locales
 ```
