@@ -18,10 +18,18 @@
 #' jps$links_template
 #' jps$editor
 #' jps$author
+#'
+#' # Load from a local style file
+#' ## just specify the style and we read from the local style files
+#' style_load(input="apa")
 #' }
 
 style_load <- function(input, ...){
-  out <- csl_GET(input, ...)
+  input <- as.location(input)
+  out <- switch(attr(input, "type"),
+                file = read_file(input),
+                url = csl_GET(input, ...)
+  )
   xml <- XML::xmlParse(out)
   parse_xml(xml)
 }

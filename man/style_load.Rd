@@ -30,6 +30,10 @@ jps$citation_format
 jps$links_template
 jps$editor
 jps$author
+
+# Load from a local style file
+## just specify the style and we read from the local style files
+style_load(input="apa")
 }
 }
 
