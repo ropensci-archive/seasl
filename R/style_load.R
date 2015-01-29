@@ -22,12 +22,13 @@
 #' # Load from a local style file
 #' ## just specify the style and we read from the local style files
 #' style_load(input="apa")
+#' style_load(input="zdm")
 #' }
 
 style_load <- function(input, ...){
   input <- as.location(input)
   out <- switch(attr(input, "type"),
-                file = read_file(input),
+                file = input[[1]],
                 url = csl_GET(input, ...)
   )
   xml <- XML::xmlParse(out)

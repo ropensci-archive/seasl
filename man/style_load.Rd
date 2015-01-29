@@ -34,6 +34,7 @@ jps$author
 # Load from a local style file
 ## just specify the style and we read from the local style files
 style_load(input="apa")
+style_load(input="zdm")
 }
 }
 
