@@ -7,11 +7,11 @@
 \alias{print.location}
 \title{Convert a path or URL to a location object.}
 \usage{
-as.location(x, ...)
+as.location(x, y, ...)
 
-\method{as.location}{character}(x, ...)
+\method{as.location}{character}(x, y, ...)
 
-\method{as.location}{location}(x, ...)
+\method{as.location}{location}(x, y, ...)
 
 \method{print}{location}(x, ...)
 }

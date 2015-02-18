@@ -15,21 +15,23 @@
 #' as.location(url)
 #' }
 
-as.location <- function(x, ...) UseMethod("as.location")
+as.location <- function(x, y, ...) UseMethod("as.location")
 
 #' @export
 #' @rdname as.location
-as.location.character <- function(x, ...) check_location(x, ...)
+as.location.character <- function(x, y, ...) check_location(x, y, ...)
 
 #' @export
 #' @rdname as.location
-as.location.location <- function(x, ...) x
+as.location.location <- function(x, y, ...) x
 
-check_location <- function(x, ...){
+check_location <- function(x, y, ...){
   if(is.url(x)){
     as_location(x, "url")
   } else {
-    path <- styles(x)
+    path <- switch(y,
+                   style = styles(x),
+                   locale = locales(x))
     if(!file.exists(path)) stop("File does not exist", call. = FALSE)
     as_location(path.expand(path), "file")
   }
