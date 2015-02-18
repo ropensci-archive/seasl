@@ -3,6 +3,8 @@ csl
 
 
 
+[![Build Status](https://api.travis-ci.org/ropensci/csl.png)](https://travis-ci.org/ropensci/csl)
+
 `csl` is an R client for exploring CSL styles. 
 
 This package is inspired by and steals ideas from the Ruby gem [csl](https://github.com/inukshuk/csl-ruby)
@@ -136,3 +138,11 @@ get_locales()
 #> 
 #> Done! Files put in /Users/sacmac/locales
 ```
+
+## Meta
+
+* Please [report any issues or bugs](https://github.com/ropensci/csl/issues).
+* License: MIT
+* Citation: execute `citation(package = 'csl')`
+
+[![ropensci_footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
