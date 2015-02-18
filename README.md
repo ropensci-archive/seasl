@@ -7,7 +7,7 @@ csl
 
 `csl` is an R client for exploring CSL styles. 
 
-This package is inspired by and steals ideas from the Ruby gem [csl](https://github.com/inukshuk/csl-ruby)
+This package is inspired by the Ruby gem [csl](https://github.com/inukshuk/csl-ruby)
 
 The [Citation Style Language 1.0.1 specification](http://citationstyles.org/downloads/specification.html)
 
