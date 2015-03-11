@@ -16,7 +16,7 @@ The [Citation Style Language 1.0.1 specification](http://citationstyles.org/down
 
 ```r
 install.packages("devtools")
-devtools::install_github("sckott/csl")
+devtools::install_github("ropensci/csl")
 ```
 
 
@@ -28,7 +28,7 @@ library("csl")
 
 
 ```r
-jps <- style_load('http://zotero.org/styles/american-journal-of-political-science')
+jps <- style_load('http://www.zotero.org/styles/american-journal-of-political-science')
 ```
 
 ## Query style information
@@ -103,7 +103,7 @@ jps$author
 
 
 ```r
-style_xml('http://zotero.org/styles/american-journal-of-political-science')
+style_xml('http://www.zotero.org/styles/american-journal-of-political-science')
 #> <?xml version="1.0" encoding="utf-8"?>
 #> <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-US">
 #>   <info>

@@ -47,7 +47,7 @@ The [Citation Style Language 1.0.1 specification](http://citationstyles.org/down
 
 ```{r eval=FALSE}
 install.packages("devtools")
-devtools::install_github("sckott/csl")
+devtools::install_github("ropensci/csl")
 ```
 
 ```{r}
@@ -57,7 +57,7 @@ library("csl")
 ## Load CSL style from a URL
 
 ```{r}
-jps <- style_load('http://zotero.org/styles/american-journal-of-political-science')
+jps <- style_load('http://www.zotero.org/styles/american-journal-of-political-science')
 ```
 
 ## Query style information
@@ -89,7 +89,7 @@ jps$author
 ## Get raw XML
 
 ```{r output.lines=1:10}
-style_xml('http://zotero.org/styles/american-journal-of-political-science')
+style_xml('http://www.zotero.org/styles/american-journal-of-political-science')
 ```
 
 ## Get styles
