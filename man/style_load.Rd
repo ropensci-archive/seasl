@@ -22,7 +22,7 @@ see \code{\link{style_xml}}.
 \examples{
 \dontrun{
 # Load a style from the Zotero style repository
-jps <- style_load(input = 'http://zotero.org/styles/american-journal-of-political-science')
+jps <- style_load(input = 'http://www.zotero.org/styles/american-journal-of-political-science')
 ## Query style information
 jps$info
 jps$title
