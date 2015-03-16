@@ -6,7 +6,7 @@
 #' @param ... Curl options passed on to \code{\link[httr]{GET}}.
 #' @details This function fetches the style XML document, and parses it into
 #' a more reasonble R list that's easy to navigate. If you want the raw XML,
-#' see \code{\link{locale_xml}}.
+#' see \code{locale_xml}.
 #' @examples \dontrun{
 #' # Load a style from the Zotero style repository
 #' jps <- locale_load(input = 'http://zotero.org/styles/american-journal-of-political-science')
@@ -25,7 +25,7 @@
 #' }
 
 locale_load <- function(input, ...){
-  input <- as.location(input, y="locale")
+  input <- as.location(input, "locale")
   out <- switch(attr(input, "type"),
                 file = input[[1]],
                 url = csl_GET(input, ...)

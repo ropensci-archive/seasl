@@ -17,7 +17,7 @@ Load a CSL locale
 \details{
 This function fetches the style XML document, and parses it into
 a more reasonble R list that's easy to navigate. If you want the raw XML,
-see \code{\link{locale_xml}}.
+see \code{locale_xml}.
 }
 \examples{
 \dontrun{
