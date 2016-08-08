@@ -1,8 +1,10 @@
 language: r
+sudo: false
+cache: packages
 
 notifications:
   email:
-    on_success: change
-    on_failure: change
+    on_success: never
+    on_failure: never
   slack:
     secure: HinJWuCtQDN20VLsReF31Tz/0POM2BzvKn3FHCeZ0xhbAdpwqPC1zQSsx3kllwsqQoWIrYa3fCuUwv+QpD+ACc3p1pVjcbPsxiL10Hd5uDqxtSwlS6OxRdGY3xUmaj8foKn2b//hqurOmyeJYgaG7nbKi4wtk51Wg6UjyyLbjsE=
