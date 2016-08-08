@@ -3,9 +3,9 @@ csl
 
 
 
-[![Build Status](https://api.travis-ci.org/ropensci/csl.png)](https://travis-ci.org/ropensci/csl)
+[![Build Status](https://api.travis-ci.org/ropenscilabs/csl.png)](https://travis-ci.org/ropenscilabs/csl)
 
-`csl` is an R client for exploring CSL styles. 
+`csl` is an R client for exploring CSL styles.
 
 This package is inspired by the Ruby gem [csl](https://github.com/inukshuk/csl-ruby)
 
@@ -16,7 +16,7 @@ The [Citation Style Language 1.0.1 specification](http://citationstyles.org/down
 
 ```r
 install.packages("devtools")
-devtools::install_github("ropensci/csl")
+devtools::install_github("ropenscilabs/csl")
 ```
 
 
@@ -124,7 +124,7 @@ Get styles from the Github repo at [https://github.com/citation-style-language/s
 
 ```r
 get_styles()
-#> 
+#>
 #> Done! Files put in /Users/sacmac/styles
 ```
 
@@ -135,14 +135,15 @@ Get locales from the Github repo at [https://github.com/citation-style-language/
 
 ```r
 get_locales()
-#> 
+#>
 #> Done! Files put in /Users/sacmac/locales
 ```
 
 ## Meta
 
-* Please [report any issues or bugs](https://github.com/ropensci/csl/issues).
+* Please [report any issues or bugs](https://github.com/ropenscilabs/csl/issues).
 * License: MIT
 * Citation: execute `citation(package = 'csl')`
+* Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 [![ropensci_footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
