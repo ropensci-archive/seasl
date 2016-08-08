@@ -1,6 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-README.Rmd
-Makefile
+^README\.Rmd$
+^Makefile$
 ^\.travis\.yml$
 ^CONDUCT\.md$
