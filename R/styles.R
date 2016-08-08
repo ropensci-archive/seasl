@@ -19,13 +19,13 @@ styles <- function(style = NULL){
   deppath <- file.path(Sys.getenv("HOME"), "styles", "dependent")
   mainff <- getfiles(mainpath)
   depff <- getfiles(deppath)
-  all <- list(independent=mainff, dependent=depff)
-  if(is.null(style)){
+  all <- list(independent = mainff, dependent = depff)
+  if (is.null(style)) {
     all
   } else {
-    if( style %in% all$independent ){
+    if ( style %in% all$independent ) {
       file.path(mainpath, paste0(style, ".csl"))
-    } else if( style %in% all$dependent ){
+    } else if ( style %in% all$dependent ) {
       file.path(deppath, paste0(style, ".csl"))
     } else {
       NULL
@@ -39,5 +39,5 @@ getfiles <- function(x) gsub("\\.csl", "", list.files(x, pattern = ".csl"))
 #' @rdname styles
 style_exists <- function(style){
   out <- styles(style)
-  if(is.null(out)) FALSE else TRUE
+  if (is.null(out)) FALSE else TRUE
 }

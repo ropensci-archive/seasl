@@ -38,7 +38,7 @@ style_load <- function(input, ...){
 parse_xml <- function(x){
   childs <- xmlChildren(xmlChildren(x)$style)
   out <- list()
-  for(i in seq_along(childs)){
+  for (i in seq_along(childs)) {
     z <- childs[[i]]
     type <- get_name(z)
     out[[type]] <- switch(type,
@@ -52,31 +52,32 @@ parse_xml <- function(x){
 
 get_name <- function(x){
   tmp <- xmlName(x)
-  if(tmp == "macro")
+  if (tmp == "macro") {
     xmlAttrs(x)[[1]]
-  else
+  } else {
     tmp
+  }
 }
 
 parse_links <- function(z){
   tmp <- xmlToList(z)
   cats <- tmp[names(tmp) %in% "category"]
   cats2 <- list()
-  for(i in seq_along(cats)){
+  for (i in seq_along(cats)) {
     cats2[[ names(cats[[i]]) ]] <- cats[[i]][[1]]
   }
   tmp <- c(tmp[!names(tmp) %in% "category"], cats2)
   tmp2 <- lapply(tmp, function(w){
     ll <- as.list(w)
-    if(length(ll) == 1) ll[[1]] else ll
+    if (length(ll) == 1) ll[[1]] else ll
   })
   links <- tmp2[names(tmp2) %in% "link"]
   links2 <- list()
-  for(i in seq_along(links)){
+  for (i in seq_along(links)) {
     links2[[paste0("links_", links[[i]]$rel)]] <- links[[i]]$href
   }
   tmp3 <- c(tmp2[!names(tmp2) %in% "link"], links2)
-  setNames(tmp3, gsub("-", "_", names(tmp3)))
+  stats::setNames(tmp3, gsub("-", "_", names(tmp3)))
 }
 
 parse_editor <- function(x){

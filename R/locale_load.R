@@ -37,7 +37,7 @@ locale_load <- function(input, ...){
 parse_locale_xml <- function(x){
   childs <- xmlChildren(xmlChildren(x)$locale)
   out <- list()
-  for(i in seq_along(childs)){
+  for (i in seq_along(childs)) {
     z <- childs[[i]]
     type <- get_name(z)
     out[[type]] <- switch(type,
@@ -51,15 +51,16 @@ parse_locale_xml <- function(x){
 
 get_name <- function(x){
   tmp <- xmlName(x)
-  if(tmp == "macro")
+  if (tmp == "macro") {
     xmlAttrs(x)[[1]]
-  else
+  } else {
     tmp
+  }
 }
 
 parse_info <- function(z){
   tmp <- xmlToList(z)
-  tmp$rights <- modifyList(tmp$rights, list(license = tmp$rights$.attrs[["license"]], .attrs = NULL))
+  tmp$rights <- utils::modifyList(tmp$rights, list(license = tmp$rights$.attrs[["license"]], .attrs = NULL))
   tmp
 }
 
@@ -69,7 +70,7 @@ parse_date <- function(x){
   lapply(x, function(z){
     tmp <- xmlToList(z)
     out <- list()
-    for(i in seq_along(tmp)){
+    for (i in seq_along(tmp)) {
       out[[ names(tmp[i]) ]] <- as.list(tmp[[i]])
     }
     out

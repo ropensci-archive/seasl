@@ -26,20 +26,20 @@ as.location.character <- function(x, type = "style") check_location(x, type)
 as.location.location <- function(x, type = "style") x
 
 check_location <- function(x, type = "style"){
-  if(is.url(x)){
+  if (is.url(x)) {
     as_location(x, "url")
   } else {
     path <- switch(type,
                    style = styles(x),
                    locale = locales(x))
     tryfile <- tryCatch(file.exists(path), error = function(e) e)
-    if(is(tryfile, "simpleError")) stop("File does not exist, check spelling", call. = FALSE)
+    if (inherits(tryfile, "simpleError")) stop("File does not exist, check spelling", call. = FALSE)
     as_location(path.expand(path), "file")
   }
 }
 
 as_location <- function(x, type){
-  structure(x, class="location", type=type)
+  structure(x, class = "location", type = type)
 }
 
 #' @export

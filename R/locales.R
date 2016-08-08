@@ -17,17 +17,17 @@
 locales <- function(locale = NULL){
   path <- file.path(Sys.getenv("HOME"), "locales")
   ff <- getfilesloc(path)
-  if(is.null(locale)){
+  if (is.null(locale)) {
     ff
   } else {
-    locs <- setNames(lapply(ff, function(x){
-      tmp <- strsplit(x, split="-")[[1]][2:3]
-      list(both=paste0(tmp, collapse = "-"), first=tmp[[1]], second=tmp[[2]])
+    locs <- stats::setNames(lapply(ff, function(x){
+      tmp <- strsplit(x, split = "-")[[1]][2:3]
+      list(both = paste0(tmp, collapse = "-"), first = tmp[[1]], second = tmp[[2]])
     }), ff)
 
-    if( locale %in% pluck(locs, "first", "") ){
+    if ( locale %in% pluck(locs, "first", "") ) {
       file.path(path, paste0(plmatch(locs, "first", locale), ".xml"))
-    } else if( locale %in% pluck(locs, "both") ){
+    } else if ( locale %in% pluck(locs, "both") ) {
       file.path(path, paste0(plmatch(locs, "both", locale), ".xml"))
     } else {
       NULL
@@ -39,7 +39,7 @@ locales <- function(locale = NULL){
 #' @rdname locales
 locale_exists <- function(locale){
   out <- locales(locale)
-  if(is.null(out)) FALSE else TRUE
+  if (is.null(out)) FALSE else TRUE
 }
 
 getfilesloc <- function(x) gsub("\\.xml", "", list.files(x, pattern = ".xml"))
