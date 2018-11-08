@@ -1,7 +1,8 @@
 csl_GET <- function(x, ...) {
-  out <- httr::GET(x, ...)
-  httr::stop_for_status(out)
-  httr::content(out, "text", encoding = "UTF-8")
+  cli <- crul::HttpClient$new(x, opts = list(...))
+  out <- cli$get()
+  out$raise_for_status()
+  out$parse("UTF-8")
 }
 
 pluck <- function(x, name, type) {

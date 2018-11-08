@@ -33,7 +33,9 @@ check_location <- function(x, type = "style"){
                    style = styles(x),
                    locale = locales(x))
     tryfile <- tryCatch(file.exists(path), error = function(e) e)
-    if (inherits(tryfile, "simpleError")) stop("File does not exist, check spelling", call. = FALSE)
+    if (inherits(tryfile, "simpleError")) {
+      stop("File does not exist, check spelling", call. = FALSE)
+    }
     as_location(path.expand(path), "file")
   }
 }

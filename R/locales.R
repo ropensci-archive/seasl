@@ -1,21 +1,21 @@
-#' List locales, locally, or from the repository of locales
+#' List locally stored locales
 #'
 #' @export
 #' @param locale (character) Locale name
-#' @return If \code{locale=NULL}, a list of locales. If \code{locale} is not NULL, then a
-#' path to the locale file is returned if the locale exists.
+#' @return If `locale=NULL`, a list of locales. If `locale` is 
+#' not `NULL`, then a full path to the locale file is returned if the 
+#' locale exists.
 #' @examples \dontrun{
-#' locales()
-#' locales("et")
-#' locales("fr-FR")
+#' csl_locales()
+#' csl_locales("et")
+#' csl_locales("fr-FR")
 #'
-#' locale_exists("et")
-#' locale_exists("cc")
-#' locale_exists("fr-FR")
+#' csl_locale_exists("et")
+#' csl_locale_exists("cc")
+#' csl_locale_exists("fr-FR")
 #' }
-
-locales <- function(locale = NULL){
-  path <- file.path(Sys.getenv("HOME"), "locales")
+csl_locales <- function(locale = NULL) {
+  path <- file.path(csl_cache$cache_path_get(), "locales")
   ff <- getfilesloc(path)
   if (is.null(locale)) {
     ff
@@ -36,8 +36,8 @@ locales <- function(locale = NULL){
 }
 
 #' @export
-#' @rdname locales
-locale_exists <- function(locale){
+#' @rdname csl_locales
+csl_locale_exists <- function(locale){
   out <- locales(locale)
   if (is.null(out)) FALSE else TRUE
 }

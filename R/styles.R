@@ -1,22 +1,22 @@
-#' List styles, locally, or from the CSL repository of styles
+#' List locally stored styles
 #'
 #' @export
 #' @param style (character) Style name
-#' @return If \code{style=NULL}, a list of length two, independent and dependent styles.
-#' If \code{style} is not NULL, then a path to the style file is returned if the style
-#' exists.
+#' @return If `style=NULL`, a list of length two, independent and dependent 
+#' styles. If `style` is not `NULL`, then a full path to the style file is 
+#' returned if the style exists.
 #' @examples \dontrun{
-#' styles()
-#' styles("apa")
-#' styles("zdm")
+#' csl_styles()
+#' csl_styles("apa")
+#' csl_styles("zdm")
 #'
-#' style_exists("apa")
-#' style_exists("apaggg")
+#' csl_style_exists("apa")
+#' csl_style_exists("apaggg")
 #' }
-
-styles <- function(style = NULL){
-  mainpath <- file.path(Sys.getenv("HOME"), "styles")
-  deppath <- file.path(Sys.getenv("HOME"), "styles", "dependent")
+csl_styles <- function(style = NULL) {
+  csl_cache$mkdir()
+  mainpath <- file.path(csl_cache$cache_path_get(), "styles")
+  deppath <- file.path(csl_cache$cache_path_get(), "styles", "dependent")
   mainff <- getfiles(mainpath)
   depff <- getfiles(deppath)
   all <- list(independent = mainff, dependent = depff)
@@ -36,8 +36,8 @@ styles <- function(style = NULL){
 getfiles <- function(x) gsub("\\.csl", "", list.files(x, pattern = ".csl"))
 
 #' @export
-#' @rdname styles
-style_exists <- function(style){
+#' @rdname csl_styles
+csl_style_exists <- function(style) {
   out <- styles(style)
   if (is.null(out)) FALSE else TRUE
 }

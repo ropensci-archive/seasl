@@ -2,8 +2,8 @@
 % Please edit documentation in R/seasl-package.R
 \docType{package}
 \name{seasl-package}
-\alias{seasl}
 \alias{seasl-package}
+\alias{seasl}
 \title{R client for CSL styles}
 \description{
 R client for Citation Style Language (CSL) styles
@@ -12,4 +12,3 @@ R client for Citation Style Language (CSL) styles
 Scott Chamberlain \email{myrmecocystus@gmail.com}
 }
 \keyword{package}
-

@@ -35,13 +35,20 @@ knitr::opts_chunk$set(
 )
 ```
 
-[![Build Status](https://api.travis-ci.org/ropenscilabs/seasl.png)](https://travis-ci.org/ropenscilabs/seasl)
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Build Status](https://travis-ci.org/ropenscilabs/seasl.svg?branch=master)](https://travis-ci.org/ropenscilabs/seasl)
 
 `seasl` is an R client for exploring CSL styles.
 
 This package is inspired by the Ruby gem [csl](https://github.com/inukshuk/csl-ruby)
 
 The [Citation Style Language 1.0.1 specification](http://citationstyles.org/downloads/specification.html)
+
+Package API:
+
+```{r echo=FALSE}
+cat(paste(" -", paste(sort(getNamespaceExports("seasl")), collapse = "\n - ")))
+```
 
 ## Install
 
@@ -54,10 +61,60 @@ devtools::install_github("ropenscilabs/seasl")
 library("seasl")
 ```
 
+## Download styles and locales
+
+First, you may want to download style and locale files. `csl_fetch_styles()` and `csl_fetch_locales()`
+download the files to your machine. See `?csl_cache` for caching information, including
+how to change the cache location.
+
+Styles retrieved from the Github repo at <https://github.com/citation-style-language/styles-distribution>
+
+```{r eval=FALSE}
+csl_fetch_styles()
+#>
+#> Done! Files put in /Users/sckott/Library/Caches/R/seasl/styles
+```
+
+Locales retrieved from the Github repo at <https://github.com/citation-style-language/locales>
+
+```{r eval=FALSE}
+csl_fetch_locales()
+#>
+#> Done! Files put in /Users/sckott/Library/Caches/R/seasl/locales
+```
+
+## File paths to CSL styles and locales
+
+calling `csl_styles` without inputs gives all styles, with separate lists for 
+dependent and independent styles
+
+```{r output.lines = 1:10}
+csl_styles()
+```
+
+calling `csl_styles` with an input gives the path to that style, if found
+
+```{r}
+csl_styles("apa")
+csl_styles("archeologie-medievale")
+```
+
+Same patterns go for locales (note that there are far fewer locales than styles)
+
+```{r}
+# just locale names
+csl_locales()
+```
+
+```{r}
+# when locale given, you get the full path
+csl_locales("fr-FR")
+```
+
 ## Load CSL style from a URL
 
 ```{r}
-jps <- style_load('http://www.zotero.org/styles/american-journal-of-political-science')
+jps <- csl_style_load('http://www.zotero.org/styles/american-journal-of-political-science')
 ```
 
 ## Query style information
@@ -67,49 +124,25 @@ jps$info
 ```
 
 ```{r}
-jps$title
-```
-
-```{r}
-jps$citation_format
-```
-
-```{r}
-jps$links_template
+jps$info$title
 ```
 
 ```{r output.lines = 1:10}
-jps$editor
+jps$macros
 ```
 
 ```{r output.lines = 1:10}
-jps$author
+jps$citation
+```
+
+```{r output.lines = 1:10}
+jps$bibliography
 ```
 
 ## Get raw XML
 
 ```{r output.lines=1:10}
-style_xml('http://www.zotero.org/styles/american-journal-of-political-science')
-```
-
-## Get styles
-
-Get styles from the Github repo at [https://github.com/citation-style-language/styles-distribution](https://github.com/citation-style-language/styles-distribution)
-
-```{r eval=FALSE}
-get_styles()
-#>
-#> Done! Files put in /Users/sacmac/styles
-```
-
-## Get locales
-
-Get locales from the Github repo at [https://github.com/citation-style-language/locales](https://github.com/citation-style-language/locales)
-
-```{r eval=FALSE}
-get_locales()
-#>
-#> Done! Files put in /Users/sacmac/locales
+csl_style_xml('http://www.zotero.org/styles/american-journal-of-political-science')
 ```
 
 ## Meta
@@ -117,6 +150,6 @@ get_locales()
 * Please [report any issues or bugs](https://github.com/ropenscilabs/seasl/issues).
 * License: MIT
 * Citation: execute `citation(package = 'seasl')`
-* Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+* Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
-[![ropensci_footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
+[![ropensci_footer](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)

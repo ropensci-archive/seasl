@@ -1,22 +1,20 @@
 #' Get XML for a CSL style
 #'
 #' @export
-#'
-#' @param input URL or local file path
-#' @param raw (logical) If \code{FALSE} (default) return parsed XML to class
-#' \code{XMLInternalDocument}. If \code{TRUE}, get character string of XML.
-#' @param ... Curl options passed on to \code{\link[httr]{GET}}.
+#' @param input (character) URL or local file path. Required.
+#' @param raw (logical) If `FALSE` (default) return parsed XML to class
+#' `xml_document`. If `TRUE`, get character string of XML.
+#' @param ... Curl options passed on to [crul::HttpClient]
+#' @return an object of class `xml_document`, see \pkg{xml2}
+#' to parse the object
 #' @details This function fetches the style XML document. If you want parsed data,
-#' see \code{\link{style_load}}.
+#' see [style_load()].
 #' @examples \dontrun{
-#' style_xml('http://zotero.org/styles/american-journal-of-political-science')
-#' style_xml('http://zotero.org/styles/american-journal-of-political-science', TRUE)
+#' csl_style_xml('http://zotero.org/styles/american-journal-of-political-science')
+#' csl_style_xml('http://zotero.org/styles/american-journal-of-political-science', TRUE)
 #' }
-
-style_xml <- function(input, raw=FALSE, ...){
+csl_style_xml <- function(input, raw = FALSE, ...) {
   out <- csl_GET(input, ...)
-  if(raw)
-    out
-  else
-    XML::xmlParse(out)
+  if (raw) return(out)
+  xml2::read_xml(out)
 }

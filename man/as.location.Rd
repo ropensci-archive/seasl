@@ -26,4 +26,3 @@ url <- 'http://zotero.org/styles/american-journal-of-political-science'
 as.location(url)
 }
 }
-
