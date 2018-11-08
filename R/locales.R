@@ -38,7 +38,7 @@ csl_locales <- function(locale = NULL) {
 #' @export
 #' @rdname csl_locales
 csl_locale_exists <- function(locale){
-  out <- locales(locale)
+  out <- csl_locales(locale)
   if (is.null(out)) FALSE else TRUE
 }
 

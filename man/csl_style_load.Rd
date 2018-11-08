@@ -29,7 +29,7 @@ Load a CSL style
 \details{
 This function fetches the style XML document, and parses it into
 a more reasonble R list that's easy to navigate. If you want the raw XML,
-see \code{\link[=style_xml]{style_xml()}}
+see \code{\link[=csl_style_xml]{csl_style_xml()}}
 }
 \examples{
 \dontrun{

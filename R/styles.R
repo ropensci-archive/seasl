@@ -38,6 +38,6 @@ getfiles <- function(x) gsub("\\.csl", "", list.files(x, pattern = ".csl"))
 #' @export
 #' @rdname csl_styles
 csl_style_exists <- function(style) {
-  out <- styles(style)
+  out <- csl_styles(style)
   if (is.null(out)) FALSE else TRUE
 }

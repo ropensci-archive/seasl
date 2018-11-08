@@ -14,7 +14,7 @@ csl_style_exists(style)
 }
 \value{
 If \code{style=NULL}, a list of length two, independent and dependent
-styles. If \code{style} is not \code{NULL}, then a path to the style file is
+styles. If \code{style} is not \code{NULL}, then a full path to the style file is
 returned if the style exists.
 }
 \description{

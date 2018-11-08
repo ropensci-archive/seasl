@@ -14,7 +14,7 @@ csl_locale_exists(locale)
 }
 \value{
 If \code{locale=NULL}, a list of locales. If \code{locale} is
-not \code{NULL}, then a path to the locale file is returned if the
+not \code{NULL}, then a full path to the locale file is returned if the
 locale exists.
 }
 \description{

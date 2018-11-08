@@ -30,8 +30,8 @@ check_location <- function(x, type = "style"){
     as_location(x, "url")
   } else {
     path <- switch(type,
-                   style = styles(x),
-                   locale = locales(x))
+                   style = csl_styles(x),
+                   locale = csl_locales(x))
     tryfile <- tryCatch(file.exists(path), error = function(e) e)
     if (inherits(tryfile, "simpleError")) {
       stop("File does not exist, check spelling", call. = FALSE)

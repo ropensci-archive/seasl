@@ -23,7 +23,7 @@ Get XML for a CSL style
 }
 \details{
 This function fetches the style XML document. If you want parsed data,
-see \code{\link[=style_load]{style_load()}}.
+see \code{\link[=csl_style_load]{csl_style_load()}}.
 }
 \examples{
 \dontrun{

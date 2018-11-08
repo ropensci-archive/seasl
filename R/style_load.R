@@ -5,7 +5,7 @@
 #' @param ... Curl options passed on to [crul::HttpClient]
 #' @details This function fetches the style XML document, and parses it into
 #' a more reasonble R list that's easy to navigate. If you want the raw XML,
-#' see [style_xml()]
+#' see [csl_style_xml()]
 #' @return named list, including slots for 
 #' 
 #' - info: basic top level information
