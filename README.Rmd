@@ -111,6 +111,18 @@ csl_locales()
 csl_locales("fr-FR")
 ```
 
+Alternatively, you can try to find a style by using `csl_style_find()`
+
+```{r}
+# single match
+csl_style_find(x = "American Journal of Epidemiology")
+```
+
+```{r output.lines = 1:10}
+# many matches
+csl_style_find(x = "American Journal")
+```
+
 ## Load CSL style from a URL
 
 ```{r}

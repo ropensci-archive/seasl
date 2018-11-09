@@ -24,6 +24,7 @@ Package API:
 #>  - csl_locale_load
 #>  - csl_locales
 #>  - csl_style_exists
+#>  - csl_style_find
 #>  - csl_style_load
 #>  - csl_style_xml
 #>  - csl_styles
@@ -123,6 +124,32 @@ csl_locales()
 # when locale given, you get the full path
 csl_locales("fr-FR")
 #> [1] "/Users/sckott/Library/Caches/R/seasl/locales/locales-fr-FR.xml"
+```
+
+Alternatively, you can try to find a style by using `csl_style_find()`
+
+
+```r
+# single match
+csl_style_find(x = "American Journal of Epidemiology")
+#> [1] "/Users/sckott/Library/Caches/R/seasl/styles/american-journal-of-epidemiology.csl"
+```
+
+
+```r
+# many matches
+csl_style_find(x = "American Journal")
+#>  [1] "/Users/sckott/Library/Caches/R/seasl/styles/american-journal-of-agricultural-economics.csl"                                     
+#>  [2] "/Users/sckott/Library/Caches/R/seasl/styles/american-journal-of-archaeology.csl"                                                
+#>  [3] "/Users/sckott/Library/Caches/R/seasl/styles/american-journal-of-botany.csl"                                                     
+#>  [4] "/Users/sckott/Library/Caches/R/seasl/styles/american-journal-of-climate-change.csl"                                             
+#>  [5] "/Users/sckott/Library/Caches/R/seasl/styles/american-journal-of-clinical-pathology.csl"                                         
+#>  [6] "/Users/sckott/Library/Caches/R/seasl/styles/american-journal-of-enology-and-viticulture.csl"                                    
+#>  [7] "/Users/sckott/Library/Caches/R/seasl/styles/american-journal-of-epidemiology.csl"                                               
+#>  [8] "/Users/sckott/Library/Caches/R/seasl/styles/american-journal-of-health-behavior.csl"                                            
+#>  [9] "/Users/sckott/Library/Caches/R/seasl/styles/american-journal-of-hypertension.csl"                                               
+#> [10] "/Users/sckott/Library/Caches/R/seasl/styles/american-journal-of-medical-genetics.csl"                                           
+...
 ```
 
 ## Load CSL style from a URL

@@ -24,6 +24,7 @@ csl_fetch_locales <- function(...) {
   unlink(file.path(path, "locales", 
     Filter(function(x) !grepl("\\.xml|\\.json", x), 
       list.files(file.path(path, "locales")))), recursive = TRUE, force = TRUE)
+  unlink(file.path(path, "locales.zip"))
   message(sprintf("\nDone! Files put in %s", file.path(path, "locales")))
   invisible(file.path(path, "locales"))
 }

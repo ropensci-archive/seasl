@@ -41,3 +41,11 @@ csl_style_exists <- function(style) {
   out <- csl_styles(style)
   if (is.null(out)) FALSE else TRUE
 }
+
+
+styles_exist <- function() {
+  spath <- file.path(csl_cache$cache_path_get(), "styles")
+  if (!file.exists(spath)) {
+    warning(spath, " not found, you may need to run csl_fetch_styles()")
+  }
+}
