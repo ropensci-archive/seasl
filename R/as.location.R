@@ -4,7 +4,8 @@
 #'
 #' @param x Input
 #' @param type (character) One of style (default) or locale
-#' @examples \donttest{
+#' @examples
+#' if (length(csl_cache$list()) > 0) {
 #' # Style files
 #' as.location("apa")
 #' as.location("teaching-and-learning-in-nursing")
@@ -14,7 +15,6 @@
 #' url <- 'http://zotero.org/styles/american-journal-of-political-science'
 #' as.location(url)
 #' }
-
 as.location <- function(x, type = "style") {
   UseMethod("as.location")
 }

@@ -1,13 +1,17 @@
 Package: seasl
 Type: Package
 Title: Parse Citation Style Language ('CSL') Texts
-Description: Parse 'CSL' Styles (<http://citationstyles.org>).
+Description: Parse 'CSL' Styles (<https://citationstyles.org>).
 Version: 0.2.0
 URL: https://github.com/ropenscilabs/seasl (devel)
     https://docs.ropensci.org/seasl/ (docs)
 BugReports: https://github.com/ropenscilabs/seasl/issues
-Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
-    email = "myrmecocystus@gmail.com"))
+Authors@R: c(
+    person("Scott", "Chamberlain", role = c("aut", "cre"),
+        email = "myrmecocystus@gmail.com",
+        comment = c(ORCID="0000-0003-1444-9135")),
+    person("rOpenSci", role = "fnd", comment = "https://ropensci.org")
+    )
 License: MIT + file LICENSE
 LazyData: TRUE
 Roxygen: list(markdown = TRUE)
@@ -20,3 +24,6 @@ Imports:
 Suggests:
     testthat
 RoxygenNote: 7.0.2
+X-schema.org-applicationCategory: Literature
+X-schema.org-keywords: text-ming, literature, citations, style, parse
+X-schema.org-isPartOf: https://ropensci.org
