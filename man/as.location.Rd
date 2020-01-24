@@ -15,7 +15,7 @@ as.location(x, type = "style")
 Convert a path or URL to a location object.
 }
 \examples{
-\donttest{
+if (length(csl_cache$list()) > 0) {
 # Style files
 as.location("apa")
 as.location("teaching-and-learning-in-nursing")
