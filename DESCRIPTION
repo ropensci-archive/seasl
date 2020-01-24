@@ -2,8 +2,9 @@ Package: seasl
 Type: Package
 Title: Parse Citation Style Language ('CSL') Texts
 Description: Parse 'CSL' Styles (<http://citationstyles.org>).
-Version: 0.1.1.9100
-URL: https://github.com/ropenscilabs/seasl
+Version: 0.2.0
+URL: https://github.com/ropenscilabs/seasl (devel)
+    https://docs.ropensci.org/seasl/ (docs)
 BugReports: https://github.com/ropenscilabs/seasl/issues
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com"))
@@ -17,6 +18,5 @@ Imports:
     crul,
     hoardr
 Suggests:
-    roxygen2 (>= 5.0.1),
     testthat
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2

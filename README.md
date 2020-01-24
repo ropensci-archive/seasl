@@ -14,28 +14,31 @@ The [Citation Style Language 1.0.1 specification](http://citationstyles.org/down
 
 Package API:
 
-
-```
-#>  - as.location
-#>  - csl_cache
-#>  - csl_fetch_locales
-#>  - csl_fetch_styles
-#>  - csl_locale_exists
-#>  - csl_locale_load
-#>  - csl_locales
-#>  - csl_style_exists
-#>  - csl_style_find
-#>  - csl_style_load
-#>  - csl_style_xml
-#>  - csl_styles
-```
+ - `csl_locales`
+ - `as.location`
+ - `csl_styles`
+ - `csl_locale_exists`
+ - `csl_cache`
+ - `csl_fetch_styles`
+ - `csl_style_find`
+ - `csl_style_xml`
+ - `csl_style_load`
+ - `csl_style_exists`
+ - `csl_locale_load`
+ - `csl_fetch_locales`
 
 ## Install
 
 
 ```r
-install.packages("devtools")
-devtools::install_github("ropenscilabs/seasl")
+install.packages("seasl")
+```
+
+or
+
+
+```r
+remotes::install_github("ropenscilabs/seasl")
 ```
 
 
@@ -76,15 +79,15 @@ dependent and independent styles
 ```r
 csl_styles()
 #> $independent
-#>    [1] "academy-of-management-review"                                                                            
-#>    [2] "accident-analysis-and-prevention"                                                                        
-#>    [3] "aci-materials-journal"                                                                                   
-#>    [4] "acm-sig-proceedings-long-author-list"                                                                    
-#>    [5] "acm-sig-proceedings"                                                                                     
-#>    [6] "acm-sigchi-proceedings-extended-abstract-format"                                                         
-#>    [7] "acm-sigchi-proceedings"                                                                                  
-#>    [8] "acm-siggraph"                                                                                            
-#>    [9] "acme-an-international-journal-for-critical-geographies"                                                  
+#>    [1] "academy-of-management-review"                                                                                        
+#>    [2] "accident-analysis-and-prevention"                                                                                    
+#>    [3] "aci-materials-journal"                                                                                               
+#>    [4] "acm-sig-proceedings-long-author-list"                                                                                
+#>    [5] "acm-sig-proceedings"                                                                                                 
+#>    [6] "acm-sigchi-proceedings-extended-abstract-format"                                                                     
+#>    [7] "acm-sigchi-proceedings"                                                                                              
+#>    [8] "acm-siggraph"                                                                                                        
+#>    [9] "acme-an-international-journal-for-critical-geographies"                                                              
 ...
 ```
 
@@ -111,12 +114,13 @@ csl_locales()
 #> [17] "locales-et-EE" "locales-eu"    "locales-fa-IR" "locales-fi-FI"
 #> [21] "locales-fr-CA" "locales-fr-FR" "locales-he-IL" "locales-hr-HR"
 #> [25] "locales-hu-HU" "locales-id-ID" "locales-is-IS" "locales-it-IT"
-#> [29] "locales-ja-JP" "locales-km-KH" "locales-ko-KR" "locales-lt-LT"
-#> [33] "locales-lv-LV" "locales-mn-MN" "locales-nb-NO" "locales-nl-NL"
-#> [37] "locales-nn-NO" "locales-pl-PL" "locales-pt-BR" "locales-pt-PT"
-#> [41] "locales-ro-RO" "locales-ru-RU" "locales-sk-SK" "locales-sl-SI"
-#> [45] "locales-sr-RS" "locales-sv-SE" "locales-th-TH" "locales-tr-TR"
-#> [49] "locales-uk-UA" "locales-vi-VN" "locales-zh-CN" "locales-zh-TW"
+#> [29] "locales-ja-JP" "locales-km-KH" "locales-ko-KR" "locales-la"   
+#> [33] "locales-lt-LT" "locales-lv-LV" "locales-mn-MN" "locales-nb-NO"
+#> [37] "locales-nl-NL" "locales-nn-NO" "locales-pl-PL" "locales-pt-BR"
+#> [41] "locales-pt-PT" "locales-ro-RO" "locales-ru-RU" "locales-sk-SK"
+#> [45] "locales-sl-SI" "locales-sr-RS" "locales-sv-SE" "locales-th-TH"
+#> [49] "locales-tr-TR" "locales-uk-UA" "locales-vi-VN" "locales-zh-CN"
+#> [53] "locales-zh-TW"
 ```
 
 
@@ -238,14 +242,14 @@ jps$bibliography
 csl_style_xml('http://www.zotero.org/styles/american-journal-of-political-science')
 #> {xml_document}
 #> <style class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-US" xmlns="http://purl.org/net/xbiblio/csl">
-#>  [1] <info>\n  <title>American Journal of Political Science</title>\n  < ...
-#>  [2] <macro name="editor">\n  <names variable="editor" delimiter=", ">\n ...
-#>  [3] <macro name="author">\n  <names variable="author">\n    <name name- ...
-#>  [4] <macro name="author-short">\n  <names variable="author">\n    <name ...
-#>  [5] <macro name="access">\n  <choose>\n    <if type="legal_case" match= ...
-#>  [6] <macro name="title">\n  <choose>\n    <if type="bill book graphic l ...
-#>  [7] <macro name="legal_case">\n  <group prefix=" " delimiter=" ">\n     ...
-#>  [8] <macro name="publisher">\n  <choose>\n    <if type="thesis" match=" ...
+#>  [1] <info>\n  <title>American Journal of Political Science</title>\n  <title ...
+#>  [2] <macro name="editor">\n  <names variable="editor" delimiter=", ">\n    < ...
+#>  [3] <macro name="author">\n  <names variable="author">\n    <name name-as-so ...
+#>  [4] <macro name="author-short">\n  <names variable="author">\n    <name form ...
+#>  [5] <macro name="access">\n  <choose>\n    <if type="legal_case" match="none ...
+#>  [6] <macro name="title">\n  <choose>\n    <if type="bill book graphic legal_ ...
+#>  [7] <macro name="legal_case">\n  <group prefix=" " delimiter=" ">\n    <text ...
+#>  [8] <macro name="publisher">\n  <choose>\n    <if type="thesis" match="none" ...
 ...
 ```
 
@@ -254,6 +258,8 @@ csl_style_xml('http://www.zotero.org/styles/american-journal-of-political-scienc
 * Please [report any issues or bugs](https://github.com/ropenscilabs/seasl/issues).
 * License: MIT
 * Citation: execute `citation(package = 'seasl')`
-* Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+* Please note that this project is released with a [Contributor Code of Conduct][coc]. By participating in this project you agree to abide by its terms.
 
 [![ropensci_footer](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)
+
+[coc]: https://github.com/ropenscilabs/seasl/blob/master/CODE_OF_CONDUCT.md
