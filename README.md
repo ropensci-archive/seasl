@@ -4,7 +4,9 @@ seasl
 
 
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
-[![Build Status](https://travis-ci.org/ropenscilabs/seasl.svg?branch=master)](https://travis-ci.org/ropenscilabs/seasl)
+![R build status](https://github.com/ropenscilabs/seasl/workflows/R-CMD-check/badge.svg)
+[![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/seasl?color=C9A115)](https://github.com/metacran/cranlogs.app)
+[![cran version](https://www.r-pkg.org/badges/version/seasl)](https://cran.r-project.org/package=seasl)
 
 `seasl` is an R client for exploring CSL styles.
 
