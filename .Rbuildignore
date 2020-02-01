@@ -4,8 +4,7 @@
 ^Makefile$
 ^\.travis\.yml$
 ^CODE_OF_CONDUCT\.md$
-Makefile
-revdep/
 ^codemeta\.json$
 .github
 cran-comments.md
+^revdep$
