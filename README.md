@@ -4,9 +4,10 @@ seasl
 
 
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
-![R build status](https://github.com/ropenscilabs/seasl/workflows/R-CMD-check/badge.svg)
+![R build status](https://github.com/ropensci/seasl/workflows/R-CMD-check/badge.svg)
 [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/seasl?color=C9A115)](https://github.com/metacran/cranlogs.app)
 [![cran version](https://www.r-pkg.org/badges/version/seasl)](https://cran.r-project.org/package=seasl)
+<!-- [![Build Status](https://travis-ci.org/ropensci/seasl.svg?branch=master)](https://travis-ci.org/ropensci/seasl) -->
 
 `seasl` is an R client for exploring CSL styles.
 
@@ -40,7 +41,7 @@ or
 
 
 ```r
-remotes::install_github("ropenscilabs/seasl")
+remotes::install_github("ropensci/seasl")
 ```
 
 
@@ -257,11 +258,11 @@ csl_style_xml('http://www.zotero.org/styles/american-journal-of-political-scienc
 
 ## Meta
 
-* Please [report any issues or bugs](https://github.com/ropenscilabs/seasl/issues).
+* Please [report any issues or bugs](https://github.com/ropensci/seasl/issues).
 * License: MIT
 * Citation: execute `citation(package = 'seasl')`
 * Please note that this project is released with a [Contributor Code of Conduct][coc]. By participating in this project you agree to abide by its terms.
 
 [![ropensci_footer](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)
 
-[coc]: https://github.com/ropenscilabs/seasl/blob/master/CODE_OF_CONDUCT.md
+[coc]: https://github.com/ropensci/seasl/blob/master/CODE_OF_CONDUCT.md
