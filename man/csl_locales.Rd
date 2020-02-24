@@ -10,7 +10,7 @@ csl_locales(locale = NULL)
 csl_locale_exists(locale)
 }
 \arguments{
-\item{locale}{(character) Locale name}
+\item{locale}{(character) one locale name}
 }
 \value{
 If \code{locale=NULL}, a list of locales. If \code{locale} is
