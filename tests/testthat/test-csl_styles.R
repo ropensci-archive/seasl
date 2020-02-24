@@ -1,5 +1,8 @@
 test_that("csl_styles: after files downloaded", {
+  skip_on_cran()
+
   # tests
+  invisible(csl_fetch_styles())
   aa <- csl_styles()
 
   expect_is(aa, "list")
@@ -9,6 +12,8 @@ test_that("csl_styles: after files downloaded", {
 })
 
 test_that("csl_styles: files downloaded gone", {
+  skip_on_cran()
+
   csl_cache$delete_all()
   aa <- csl_styles()
 

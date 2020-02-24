@@ -1,7 +1,8 @@
 test_that("csl_style_find: after files downloaded", {
-  # download files
-  # path <- suppressMessages(csl_fetch_styles())
-  # expect_is(path, "character")
+  # download files if they don't exist
+  if (!suppressWarnings(styles_exist())) {
+    csl_fetch_styles()
+  }
 
   # single match
   aa <- csl_style_find(x = "American Journal of Epidemiology")
