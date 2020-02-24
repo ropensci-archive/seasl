@@ -45,7 +45,7 @@ knitr::opts_chunk$set(
 
 This package is inspired by the Ruby gem `csl`: https://github.com/inukshuk/csl-ruby
 
-The Citation Style Language 1.0.1 specification: http://citationstyles.org/downloads/specification.html
+The Citation Style Language 1.0.1 specification: http://docs.citationstyles.org/en/1.0.1/specification.html
 
 Package API:
 
