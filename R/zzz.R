@@ -21,3 +21,12 @@ assert <- function(x, y) {
     }
   }
 }
+
+assert_len <- function(x, y) {
+  if (!is.null(x)) {
+    if (length(x) != y) {
+      stop(deparse(substitute(x)), " must be of length ", y,
+        call. = FALSE)
+    }
+  }
+}

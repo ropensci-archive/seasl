@@ -1,7 +1,7 @@
 #' List locally stored locales
 #'
 #' @export
-#' @param locale (character) Locale name
+#' @param locale (character) one locale name
 #' @return If `locale=NULL`, a list of locales. If `locale` is 
 #' not `NULL`, then a full path to the locale file is returned if the 
 #' locale exists.
@@ -18,8 +18,9 @@ csl_locales <- function(locale = NULL) {
   path <- file.path(csl_cache$cache_path_get(), "locales")
   ff <- getfilesloc(path)
   if (is.null(locale)) {
-    ff
+    return(ff)
   } else {
+    assert_len(locale, 1)
     locs <- stats::setNames(lapply(ff, function(x){
       tmp <- strsplit(x, split = "-")[[1]][2:3]
       list(both = paste0(tmp, collapse = "-"), first = tmp[[1]], second = tmp[[2]])
