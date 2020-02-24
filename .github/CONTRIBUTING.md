@@ -30,9 +30,7 @@ GitHub username, and links to relevant issue(s)/PR(s).
 
 ### Code of Conduct
 
-Please note that seasl is released with a
-[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this
-project you agree to abide by its terms.
+Please note that seasl is released with a [Contributor Code of Conduct][coc]. By contributing to this project you agree to abide by its terms.
 
 ### See rOpenSci [contributing guide](https://devguide.ropensci.org/contributingguide.html) for further details.
 
@@ -43,3 +41,5 @@ Check out our [discussion forum](https://discuss.ropensci.org) if you think your
 ### Thanks for contributing!
 
 This contributing guide is adapted from the tidyverse contributing guide available at https://raw.githubusercontent.com/r-lib/usethis/master/inst/templates/tidy-contributing.md 
+
+[coc]: https://github.com/ropensci/seasl/blob/master/CODE_OF_CONDUCT.md
