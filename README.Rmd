@@ -43,9 +43,9 @@ knitr::opts_chunk$set(
 
 `seasl` is an R client for exploring CSL styles.
 
-This package is inspired by the Ruby gem [csl](https://github.com/inukshuk/csl-ruby)
+This package is inspired by the Ruby gem `csl`: https://github.com/inukshuk/csl-ruby
 
-The [Citation Style Language 1.0.1 specification](http://citationstyles.org/downloads/specification.html)
+The Citation Style Language 1.0.1 specification: http://citationstyles.org/downloads/specification.html
 
 Package API:
 
@@ -76,7 +76,7 @@ First, you may want to download style and locale files. `csl_fetch_styles()` and
 download the files to your machine. See `?csl_cache` for caching information, including
 how to change the cache location.
 
-Styles retrieved from the Github repo at <https://github.com/citation-style-language/styles-distribution>
+Styles retrieved from the Github repo at https://github.com/citation-style-language/styles-distribution
 
 ```{r eval=FALSE}
 csl_fetch_styles()
@@ -84,7 +84,7 @@ csl_fetch_styles()
 #> Done! Files put in /Users/sckott/Library/Caches/R/seasl/styles
 ```
 
-Locales retrieved from the Github repo at <https://github.com/citation-style-language/locales>
+Locales retrieved from the Github repo at https://github.com/citation-style-language/locales
 
 ```{r eval=FALSE}
 csl_fetch_locales()
