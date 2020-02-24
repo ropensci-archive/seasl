@@ -6,20 +6,21 @@
 #' @details This function fetches the style XML document, and parses it into
 #' a more reasonble R list that's easy to navigate. If you want the raw XML,
 #' see [csl_style_xml()]
-#' @return named list, including slots for 
-#' 
+#' @return named list, including slots for
+#'
 #' - info: basic top level information
 #' - locale: locale information, if it exists
 #' - macros: macros, 1 to many
 #' - citation: the citation format, very messy now as the format is messy,
-#' parsed with [xml2::as_list] 
+#' parsed with [xml2::as_list]
 #' - bibliography: very messy for now, we just run [xml2::as_list] on this
 #' element as it's complicated to parse
-#' 
-#' @examples \dontrun{
+#'
+#' @examples
 #' # Load a style from the Zotero style repository
 #' x <- 'http://www.zotero.org/styles/american-journal-of-political-science'
-#' jps <- csl_style_load(input = x)
+#' if (crul::ok(x)) {
+#' jps <- csl_style_load(x)
 #'
 #' ## Query style information
 #' jps$info
@@ -27,7 +28,11 @@
 #' jps$macros
 #' jps$citation
 #' jps$bibliography
+#' }
 #'
+#' \dontrun{
+#' # fetch styles
+#' csl_fetch_styles()
 #' # Load from a local style file
 #' ## just specify the style and we read from the local style files
 #' csl_style_load(input="apa")
@@ -54,7 +59,7 @@ parse_style_xml <- function(x) {
   # cite <- parse_citation(xml2::xml_find_first(x, "citation"))
   cite <- xml2::as_list(xml2::xml_find_first(x, "citation"))
   biblio <- parse_bibliography(xml2::xml_find_first(x, "bibliography"))
-  list(info = info, locale = loc_ale, macros = macros_, citation = cite, 
+  list(info = info, locale = loc_ale, macros = macros_, citation = cite,
     bibliography = biblio)
 }
 
@@ -96,14 +101,14 @@ get_name <- function(x){
 parse_bibliography <- function(x) {
   # attributes
   atts <- as.list(xml2::xml_attrs(x))
-  
+
   # sort
   st <- xml2::xml_find_all(x, "sort")
   so_rt <- NULL
   if (!is.na(st)) {
     so_rt <- list(key = lapply(xml2::xml_children(st), xml_attr_as_list))
   }
-  
+
   # layout
   lyt <- xml2::xml_find_all(x, "layout")
   lay_out <- NULL

@@ -5,14 +5,21 @@
 #' @return If `style=NULL`, a list of length two, independent and dependent 
 #' styles. If `style` is not `NULL`, then a full path to the style file is 
 #' returned if the style exists.
-#' @examples \dontrun{
+#' @examples
+#' # setup
+#' csl_cache$cache_path_set("seasl", type = "tempdir")
+#' csl_cache$cache_path_get()
+#' 
+#' # List style files
 #' csl_styles()
 #' csl_styles("apa")
 #' csl_styles("zdm")
 #'
 #' csl_style_exists("apa")
 #' csl_style_exists("apaggg")
-#' }
+#' 
+#' # cleanup
+#' csl_cache$delete_all()
 csl_styles <- function(style = NULL) {
   csl_cache$mkdir()
   mainpath <- file.path(csl_cache$cache_path_get(), "styles")

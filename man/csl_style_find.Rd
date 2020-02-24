@@ -17,7 +17,23 @@ to the style file on your machine
 Search for a CSL style
 }
 \examples{
+# setup
+csl_cache$cache_path_set("seasl", type = "tempdir")
+csl_cache$mkdir()
+dir.create(file.path(csl_cache$cache_path_get(), "styles"))
+an <- system.file('inst/examples/acta-naturae.csl', package = 'seasl')
+file.copy(an, file.path(csl_cache$cache_path_get(), "styles/acta-naturae.csl"))
+
+# find a style
+csl_style_find(x = "Naturae")
+
+# cleanup
+csl_cache$delete_all()
+
 \dontrun{
+# fetch styles
+csl_fetch_styles()
+
 # single match
 csl_style_find(x = "American Journal of Epidemiology")
 

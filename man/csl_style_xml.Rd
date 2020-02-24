@@ -22,12 +22,12 @@ to parse the object
 Get XML for a CSL style
 }
 \details{
-This function fetches the style XML document. If you want parsed data,
-see \code{\link[=csl_style_load]{csl_style_load()}}.
+This function fetches the style XML document. If you want
+parsed data, see \code{\link[=csl_style_load]{csl_style_load()}}.
 }
 \examples{
-\dontrun{
-csl_style_xml('http://zotero.org/styles/american-journal-of-political-science')
-csl_style_xml('http://zotero.org/styles/american-journal-of-political-science', TRUE)
+ajps <- 'http://zotero.org/styles/american-journal-of-political-science'
+if (crul::ok(ajps)) {
+csl_style_xml(ajps)
 }
 }

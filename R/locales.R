@@ -5,8 +5,25 @@
 #' @return If `locale=NULL`, a list of locales. If `locale` is 
 #' not `NULL`, then a full path to the locale file is returned if the 
 #' locale exists.
-#' @examples \dontrun{
+#' @examples
+#' # setup
+#' csl_cache$cache_path_set("seasl", type = "tempdir")
+#' csl_cache$cache_path_get()
+#' 
+#' # List all locale files
 #' csl_locales()
+#' 
+#' # cleanup
+#' csl_cache$delete_all()
+#' 
+#' \dontrun{
+#' # fetch data first
+#' csl_fetch_locales()
+#' 
+#' # List all locale files
+#' csl_locales()
+#' 
+#' # list files
 #' csl_locales("et")
 #' csl_locales("fr-FR")
 #'

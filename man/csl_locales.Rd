@@ -21,8 +21,24 @@ locale exists.
 List locally stored locales
 }
 \examples{
-\dontrun{
+# setup
+csl_cache$cache_path_set("seasl", type = "tempdir")
+csl_cache$cache_path_get()
+
+# List all locale files
 csl_locales()
+
+# cleanup
+csl_cache$delete_all()
+
+\dontrun{
+# fetch data first
+csl_fetch_locales()
+
+# List all locale files
+csl_locales()
+
+# list files
 csl_locales("et")
 csl_locales("fr-FR")
 

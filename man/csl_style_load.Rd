@@ -32,10 +32,10 @@ a more reasonble R list that's easy to navigate. If you want the raw XML,
 see \code{\link[=csl_style_xml]{csl_style_xml()}}
 }
 \examples{
-\dontrun{
 # Load a style from the Zotero style repository
 x <- 'http://www.zotero.org/styles/american-journal-of-political-science'
-jps <- csl_style_load(input = x)
+if (crul::ok(x)) {
+jps <- csl_style_load(x)
 
 ## Query style information
 jps$info
@@ -43,7 +43,11 @@ jps$locale
 jps$macros
 jps$citation
 jps$bibliography
+}
 
+\dontrun{
+# fetch styles
+csl_fetch_styles()
 # Load from a local style file
 ## just specify the style and we read from the local style files
 csl_style_load(input="apa")

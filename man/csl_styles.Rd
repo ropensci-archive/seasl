@@ -21,12 +21,18 @@ returned if the style exists.
 List locally stored styles
 }
 \examples{
-\dontrun{
+# setup
+csl_cache$cache_path_set("seasl", type = "tempdir")
+csl_cache$cache_path_get()
+
+# List style files
 csl_styles()
 csl_styles("apa")
 csl_styles("zdm")
 
 csl_style_exists("apa")
 csl_style_exists("apaggg")
-}
+
+# cleanup
+csl_cache$delete_all()
 }
