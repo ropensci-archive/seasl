@@ -105,7 +105,7 @@ parse_bibliography <- function(x) {
   # sort
   st <- xml2::xml_find_all(x, "sort")
   so_rt <- NULL
-  if (!is.na(st)) {
+  if (!is.na(st) %||% FALSE) {
     so_rt <- list(key = lapply(xml2::xml_children(st), xml_attr_as_list))
   }
 

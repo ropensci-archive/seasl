@@ -30,3 +30,10 @@ assert_len <- function(x, y) {
     }
   }
 }
+
+`%||%` <- function(x, y) {
+  if (is.null(x) || length(x) == 0 || !nzchar(x))
+    y
+  else
+    x
+}
